@@ -47,7 +47,7 @@ fun RequiredLabel(
             }
         },
         style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
-        color = MaterialTheme.colorScheme.onBackground,
+        color = MaterialTheme.colorScheme.secondary,
         modifier = modifier
     )
 }
@@ -78,7 +78,9 @@ fun AppOutlinedTextField(
         shape = RoundedCornerShape(dimensionResource(R.dimen.input_corner_radius)),
         colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = MaterialTheme.colorScheme.primary,
-            unfocusedBorderColor = MaterialTheme.colorScheme.outline
+            unfocusedBorderColor = MaterialTheme.colorScheme.outline,
+            focusedContainerColor = MaterialTheme.colorScheme.surface,
+            unfocusedContainerColor = MaterialTheme.colorScheme.surface
         )
     )
     if (errorMessage != null) {

@@ -1,78 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary">#5B53CE</color>
+    <color name="primary_light">#7369E6</color>
+    <color name="primary_dark">#473FB3</color>
+    <color name="primary_deep">#37318A</color>
 
-    <!-- Brand -->
-    <color name="primary">#3E5875</color>
-    <color name="primary_light">#527499</color>
-    <color name="primary_dark">#263A52</color>
-    <color name="primary_deep">#1A2838</color>
-    <color name="primary_deepest">#121C26</color>
+    <!-- Secondary / Text Headings in Dark Theme (High contrast light slate for readability) -->
+    <color name="secondary">#A0AEC0</color>
+    <color name="secondary_light">#CBD5E1</color>
+    <color name="secondary_dark">#64748B</color>
 
-    <!-- Secondary -->
-    <color name="secondary">#48CAE4</color>
-    <color name="secondary_light">#90E0EF</color>
-    <color name="secondary_dark">#0096C7</color>
-    <color name="secondary_deep">#0077B6</color>
+    <color name="background">#121E2E</color>
+    <color name="surface">#1E2838</color>
+    <color name="surface_variant">#2A3B52</color>
 
-    <!-- Background / Surface -->
-    <color name="background">#0D1117</color>
-    <color name="surface">#161B22</color>
-    <color name="surface_variant">#1F2937</color>
+    <color name="on_background">#FFFFFF</color>
+    <color name="on_surface">#FFFFFF</color>
+    <color name="on_surface_variant">#A0AEC0</color>
 
-    <color name="surface_container">#161B22</color>
-    <color name="surface_container_high">#1F2937</color>
+    <color name="outline">#2A3B52</color>
+    <color name="divider">#2A3B52</color>
 
-    <!-- Text -->
-    <color name="on_background">#E5E7EB</color>
-    <color name="on_surface">#E5E7EB</color>
-    <color name="on_surface_variant">#9CA3AF</color>
-
-    <color name="text_primary">#E5E7EB</color>
-    <color name="text_secondary">#9CA3AF</color>
-    <color name="text_tertiary">#6B7280</color>
-    <color name="text_disabled">#4B5563</color>
-
-    <!-- Outline -->
-    <color name="outline">#374151</color>
-    <color name="outline_variant">#1F2937</color>
-    <color name="divider">#374151</color>
-
-    <!-- Success -->
     <color name="success">#22C55E</color>
-    <color name="success_light">#4ADE80</color>
-    <color name="success_dark">#16A34A</color>
-    <color name="success_container">#14532D</color>
-
-    <!-- Warning -->
     <color name="warning">#F59E0B</color>
-    <color name="warning_light">#FBBF24</color>
-    <color name="warning_dark">#D97706</color>
-    <color name="warning_container">#78350F</color>
-
-    <!-- Error -->
     <color name="error">#EF4444</color>
-    <color name="error_light">#F87171</color>
-    <color name="error_dark">#DC2626</color>
-    <color name="error_container">#7F1D1D</color>
-
-    <!-- Info -->
     <color name="info">#3B82F6</color>
-    <color name="info_container">#1E3A8A</color>
 
-    <!-- Vehicle Features -->
-    <color name="fuel">#84CC16</color>
-    <color name="trip">#06B6D4</color>
-    <color name="maintenance">#A855F7</color>
-    <color name="location">#14B8A6</color>
-
-    <color name="fuel_container">#365314</color>
-    <color name="trip_container">#164E63</color>
-    <color name="maintenance_container">#581C87</color>
-    <color name="location_container">#134E4A</color>
-
-    <!-- Common -->
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="transparent">#00000000</color>
-
 </resources>

@@ -1,6 +1,7 @@
 package com.tarun.autodrive.presentation.screens
 
 import android.util.Patterns
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
@@ -59,6 +60,13 @@ fun ForgotPasswordScreen(
                 )
             }
 
+            SpacerShow(R.dimen.spacing_medium)
+
+            Image(
+                painter = painterResource(R.drawable.mail_logo),
+                contentDescription = "mail_logo",
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
             SpacerShow(R.dimen.spacing_medium)
 
             Text(

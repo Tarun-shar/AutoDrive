@@ -2,24 +2,23 @@ package com.tarun.autodrive.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Primary = Color(0xFF263A52)
-val PrimaryLight = Color(0xFF3E5875)
-val PrimaryDark = Color(0xFF1A2838)
+val Primary = Color(0xFF5B53CE)
+val PrimaryLight = Color(0xFF7369E6)
+val PrimaryDark = Color(0xFF473FB3)
 
-val Secondary = Color(0xFF0096C7)
-val SecondaryLight = Color(0xFF48CAE4)
+val SecondaryLight = Color(0xFF47505D)
+val SecondaryDark = Color(0xFFA0AEC0)
 
 val BackgroundLight = Color(0xFFFFFFFF)
 val SurfaceLight = Color(0xFFF8FAFC)
 val OnBackgroundLight = Color(0xFF0F172A)
 val OnSurfaceLight = Color(0xFF0F172A)
-val OnSurfaceVariant = Color(0xFF475569)
-val OutlineLight = Color(0xFFE2E8F0)
+val OutlineLight = Color(0xFFCBD5E1)
 
-val BackgroundDark = Color(0xFF0D1117)
-val SurfaceDark = Color(0xFF161B22)
-val OnBackgroundDark = Color(0xFFE5E7EB)
-val OnSurfaceDark = Color(0xFFE5E7EB)
-val OutlineDark = Color(0xFF374151)
+val BackgroundDark = Color(0xFF121E2E)
+val SurfaceDark = Color(0xFF1E2838)
+val OnBackgroundDark = Color(0xFFFFFFFF)
+val OnSurfaceDark = Color(0xFFFFFFFF)
+val OutlineDark = Color(0xFF2A3B52)
 
 val ErrorColor = Color(0xFFDC2626)
