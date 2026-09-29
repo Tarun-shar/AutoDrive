@@ -5,20 +5,20 @@
     <!-- AutoDrive Brand Colors    -->
     <!-- ========================= -->
 
-    <color name="primary">#6748FF</color>
-    <color name="primary_light">#6C63FF</color>
-    <color name="primary_dark">#5748FF</color>
-    <color name="primary_deep">#4638E6</color>
-    <color name="primary_deepest">#372FD1</color>
+    <color name="primary">#263A52</color>
+    <color name="primary_light">#3E5875</color>
+    <color name="primary_dark">#1A2838</color>
+    <color name="primary_deep">#121C26</color>
+    <color name="primary_deepest">#0A1118</color>
 
     <!-- ========================= -->
-    <!-- Secondary / Cyan          -->
+    <!-- Secondary / Accent        -->
     <!-- ========================= -->
 
-    <color name="secondary">#00B8D9</color>
-    <color name="secondary_light">#00D4FF</color>
-    <color name="secondary_dark">#0096C7</color>
-    <color name="secondary_deep">#0077B6</color>
+    <color name="secondary">#0096C7</color>
+    <color name="secondary_light">#48CAE4</color>
+    <color name="secondary_dark">#0077B6</color>
+    <color name="secondary_deep">#03045E</color>
 
 
     <!-- ========================= -->

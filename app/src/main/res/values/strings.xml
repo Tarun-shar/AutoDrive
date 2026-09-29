@@ -1,4 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- App & General -->
     <string name="app_name">AutoDrive</string>
+    <string name="app_tagline">Smart Vehicle Companion</string>
+    <string name="app_description">AutoDrive is your all-in-one vehicle management app that helps you manage vehicles, track trips, schedule maintenance, store documents and get important reminders.</string>
+
+    <!-- Navigation / Legends -->
+    <string name="legend_next_screen">Next Screen</string>
+    <string name="legend_modal_bottom_sheet">Modal / Bottom Sheet</string>
+    <string name="legend_back">Back</string>
+    <string name="quick_navigation">QUICK NAVIGATION</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_vehicles">Vehicles</string>
+    <string name="nav_trips">Trips</string>
+    <string name="nav_maintenance">Maintenance</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Splash Screen -->
     <string name="title_activity_splash_screen">SplashScreen</string>
+
+    <!-- Login Screen -->
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login_subtitle">Login to continue</string>
+    <string name="email_label">Email *</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password_label">Password *</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_button">Login</string>
+    <string name="or_continue_with">or continue with</string>
+    <string name="google_sign_in">Google</string>
+    <string name="apple_sign_in">Apple</string>
+    <string name="dont_have_account">Don\'t have an account? </string>
+    <string name="sign_up_action">Sign Up</string>
+
+    <!-- Validation Error Messages -->
+    <string name="error_email_empty">Email cannot be empty</string>
+    <string name="error_email_invalid">Please enter a valid email address</string>
+    <string name="error_password_empty">Password cannot be empty</string>
+    <string name="error_password_length">Password must be at least 6 characters</string>
+
+    <!-- Actions / UI Labels -->
+    <string name="action_show">Show</string>
+    <string name="action_hide">Hide</string>
+
+    <!-- Sign Up Screen -->
+    <string name="create_account">Create Account</string>
+    <string name="signup_subtitle">Sign up to get started</string>
+    <string name="fullname_label">Full Name *</string>
+    <string name="fullname_hint">Enter your full name</string>
+    <string name="password_create_hint">Create a password</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="login_action">Login</string>
+
+    <!-- Forgot Password / Reset Email Sent -->
+    <string name="forgot_password_title">Forgot Password?</string>
+    <string name="forgot_password_subtitle">Enter your email and we\'ll send you reset instructions.</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="email_sent_title">Email Sent!</string>
+    <string name="email_sent_message">We\'ve sent password reset instructions to arjun.reddy@email.com</string>
+    <string name="back_to_login">Back to Login</string>
+
+    <!-- Home Dashboard -->
+    <string name="greeting_format">Hi, %1$s 🖐️</string>
+    <string name="dashboard_subtitle">Drive safe, have a great day!</string>
+    <string name="my_vehicle_header">My Vehicle</string>
+    <string name="change_vehicle">Change</string>
+    <string name="fuel_level_label">Fuel Level</string>
+    <string name="odometer_label">Odometer</string>
+    <string name="upcoming_service_header">Upcoming Service</string>
+    <string name="general_service">General Service</string>
+    <string name="service_due_days">Due in 5 days</string>
+    <string name="quick_actions_header">Quick Actions</string>
+    <string name="action_add_vehicle">Add Vehicle</string>
+    <string name="action_trip_history">Trip History</string>
+    <string name="action_maintenance">Maintenance</string>
+    <string name="action_location">Location</string>
+
+    <!-- Bottom Navigation / Overview Descriptions -->
+    <string name="desc_go_to_dashboard">Go to Dashboard</string>
+    <string name="desc_view_all_vehicles">View all vehicles</string>
+    <string name="desc_view_trip_history">View trip history</string>
+    <string name="desc_view_maintenance">View maintenance</string>
+    <string name="desc_profile_settings">Profile &amp; settings</string>
+
+    <!-- Vehicle List -->
+    <string name="my_vehicles_title">My Vehicles</string>
+    <string name="default_badge">Default</string>
+    <string name="vehicle_hyundai_creta">Hyundai Creta</string>
+    <string name="vehicle_hyundai_creta_no">KA 01 AB 1234</string>
+    <string name="vehicle_honda_city">Honda City</string>
+    <string name="vehicle_honda_city_no">KA 02 CD 5678</string>
+    <string name="vehicle_kia_seltos">Kia Seltos</string>
+    <string name="vehicle_kia_seltos_no">KA 03 EF 9012</string>
+
+    <!-- Add / Edit Vehicle -->
+    <string name="add_vehicle_title">Add Vehicle</string>
+    <string name="edit_vehicle_title">Edit Vehicle</string>
+    <string name="save_action">Save</string>
+    <string name="update_action">Update</string>
+    <string name="add_vehicle_image">Add Vehicle Image</string>
+    <string name="change_image">Change Image</string>
+    <string name="vehicle_name_label">Vehicle Name</string>
+    <string name="vehicle_name_hint">Enter vehicle name</string>
+    <string name="model_label">Model</string>
+    <string name="model_hint">Enter model</string>
+    <string name="year_label">Year</string>
+    <string name="year_hint">Select year</string>
+    <string name="fuel_type_label">Fuel Type</string>
+    <string name="fuel_type_hint">Select fuel type</string>
+    <string name="reg_number_label">Registration Number</string>
+    <string name="reg_number_hint">Enter registration number</string>
+
+    <!-- Vehicle Details (Overview, Info, Documents) -->
+    <string name="tab_overview">Overview</string>
+    <string name="tab_info">Info</string>
+    <string name="tab_documents">Documents</string>
+    <string name="insurance_expiry_label">Insurance</string>
+    <string name="puc_expiry_label">PUC Expiry</string>
+    <string name="last_service_label">Last Service</string>
+    <string name="next_service_label">Next Service</string>
+
+    <!-- Vehicle Info Details -->
+    <string name="owner_name_label">Owner Name</string>
+    <string name="phone_number_label">Phone Number</string>
+    <string name="purchase_date_label">Purchase Date</string>
+    <string name="purchase_price_label">Purchase Price</string>
+    <string name="chassis_number_label">Chassis Number</string>
+    <string name="engine_number_label">Engine Number</string>
+
+    <!-- Vehicle Documents -->
+    <string name="doc_insurance_cert">Insurance Certificate</string>
+    <string name="doc_rc_book">RC Book (Registration)</string>
+    <string name="doc_puc_cert">PUC Certificate</string>
+    <string name="doc_driving_license">Driving License</string>
+
+    <!-- Document Viewer -->
+    <string name="doc_viewer_title">insurance_creta.pdf</string>
+    <string name="insurance_certificate_header">INSURANCE CERTIFICATE</string>
+    <string name="policy_number_label">Policy Number</string>
+    <string name="insured_name_label">Insured Name</string>
+    <string name="vehicle_label">Vehicle</string>
+    <string name="policy_valid_from">Policy Valid From</string>
+    <string name="policy_valid_to">Policy Valid To</string>
+    <string name="action_share">Share</string>
+    <string name="action_download">Download</string>
+    <string name="action_open_in">Open in</string>
+    <string name="action_more">More</string>
+
+    <!-- Trip History & Details -->
+    <string name="trip_history_title">Trip History</string>
+    <string name="trip_bangalore_mysore">Bangalore to Mysore</string>
+    <string name="trip_bangalore_tumkur">Bangalore to Tumkur</string>
+    <string name="trip_bangalore_nandi">Bangalore to Nandi Hills</string>
+    <string name="trip_bangalore_coorg">Bangalore to Coorg</string>
+    <string name="distance_label">Distance</string>
+    <string name="duration_label">Duration</string>
+    <string name="avg_speed_label">Avg. Speed</string>
+    <string name="avg_mileage_label">Avg. Mileage</string>
+    <string name="notes_label">Notes</string>
+    <string name="sample_trip_notes">Amazing road trip! 🚙</string>
+
+    <!-- Maintenance List & Add Reminder -->
+    <string name="tab_upcoming">Upcoming</string>
+    <string name="tab_completed">Completed</string>
+    <string name="oil_change">Oil Change</string>
+    <string name="tyre_rotation">Tyre Rotation</string>
+    <string name="battery_check">Battery Check</string>
+    <string name="add_reminder_title">Add Reminder</string>
+    <string name="service_type_label">Service Type</string>
+    <string name="service_type_hint">Select service type</string>
+    <string name="description_label">Description</string>
+    <string name="description_hint">Enter description</string>
+    <string name="due_date_label">Due Date</string>
+    <string name="due_date_hint">Select date</string>
+    <string name="reminder_before_label">Reminder Before</string>
+    <string name="reminder_before_default">3 days before</string>
+
+    <!-- Profile & Settings -->
+    <string name="profile_name">Arjun Reddy</string>
+    <string name="profile_email">arjun.reddy@email.com</string>
+    <string name="menu_personal_info">Personal Information</string>
+    <string name="menu_my_vehicles">My Vehicles</string>
+    <string name="vehicles_count_badge">3 Vehicles</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_help_support">Help &amp; Support</string>
+    <string name="menu_logout">Logout</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="preference_header">Preferences</string>
+    <string name="dark_mode_label">Dark Mode</string>
+    <string name="notifications_label">Notifications</string>
+    <string name="default_vehicle_label">Default Vehicle</string>
+    <string name="distance_unit_label">Distance Unit</string>
+    <string name="distance_unit_value">Kilometers (km)</string>
+    <string name="about_header">About</string>
+    <string name="about_autodrive">About AutoDrive</string>
+    <string name="version_label">Version</string>
+    <string name="version_value">1.0.0</string>
 </resources>
