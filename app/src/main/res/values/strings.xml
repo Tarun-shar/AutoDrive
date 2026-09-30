@@ -188,6 +188,9 @@
     <string name="menu_logout">Logout</string>
 
     <string name="settings_title">Settings</string>
+    <string name="home_dashboard_title">Home Dashboard</string>
+    <string name="home_welcome_subtitle">Welcome to AutoDrive</string>
+    <string name="profile_settings_title">Profile &amp; Settings</string>
     <string name="preference_header">Preferences</string>
     <string name="dark_mode_label">Dark Mode</string>
     <string name="notifications_label">Notifications</string>
