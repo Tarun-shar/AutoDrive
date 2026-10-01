@@ -5,6 +5,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.tarun.autodrive.presentation.screens.AllRemindersScreen
 import com.tarun.autodrive.presentation.screens.DashboardScreen
 import com.tarun.autodrive.presentation.screens.EmailSentScreen
 import com.tarun.autodrive.presentation.screens.ForgotPasswordScreen
@@ -90,6 +91,16 @@ fun AppNavigation() {
                     navController.navigate("login") {
                         popUpTo("dashboard") { inclusive = true }
                     }
+                },
+                onSeeAllRemindersClick = {
+                    navController.navigate("all_reminders")
+                }
+            )
+        }
+        composable("all_reminders") {
+            AllRemindersScreen(
+                onBackClick = {
+                    navController.popBackStack()
                 }
             )
         }

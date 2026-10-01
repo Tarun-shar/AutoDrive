@@ -62,13 +62,17 @@
     <string name="back_to_login">Back to Login</string>
 
     <!-- Home Dashboard -->
-    <string name="greeting_format">Hi, %1$s 🖐️</string>
+    <string name="greeting_format">Hi, Tarun👋</string>
     <string name="dashboard_subtitle">Drive safe, have a great day!</string>
     <string name="my_vehicle_header">My Vehicle</string>
     <string name="change_vehicle">Change</string>
     <string name="fuel_level_label">Fuel Level</string>
     <string name="odometer_label">Odometer</string>
     <string name="upcoming_service_header">Upcoming Service</string>
+    <string name="see_all">See All</string>
+    <string name="reminders_title">Reminders &amp; Expiries</string>
+    <string name="empty_reminders_title">All vehicles are in great shape! 🚗</string>
+    <string name="empty_reminders_subtitle">All documents and services are completely up to date.</string>
     <string name="general_service">General Service</string>
     <string name="service_due_days">Due in 5 days</string>
     <string name="quick_actions_header">Quick Actions</string>

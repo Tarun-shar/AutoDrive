@@ -19,6 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.tarun.autodrive.R
 import com.tarun.autodrive.presentation.Utils.SpacerShow
+import com.tarun.autodrive.presentation.screens.MainScreens.HomeScreen
 import com.tarun.autodrive.ui.theme.AutoDriveTheme
 
 sealed class BottomNavItem(val route: String, val titleResId: Int, val iconResId: Int) {
@@ -33,6 +34,7 @@ sealed class BottomNavItem(val route: String, val titleResId: Int, val iconResId
 fun DashboardScreen(
     onAddClick: () -> Unit = {},
     onLogoutClick: () -> Unit = {},
+    onSeeAllRemindersClick: () -> Unit = {},
 ) {
     var selectedTab by remember { mutableStateOf("home") }
 
@@ -57,7 +59,10 @@ fun DashboardScreen(
             contentAlignment = Alignment.Center
         ) {
             when (selectedTab) {
-                "home" -> HomeScreenContent()
+                "home" -> HomeScreen(
+                    onSeeAllClick = onSeeAllRemindersClick,
+                    onNotificationClick = onSeeAllRemindersClick
+                )
                 "vehicles" -> VehiclesScreenContent()
                 "trips" -> TripsScreenContent()
                 "profile" -> ProfileScreenContent(onLogoutClick = onLogoutClick)
@@ -168,29 +173,6 @@ fun CustomBottomBar(
     }
 }
 
-@Composable
-fun HomeScreenContent() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(dimensionResource(R.dimen.spacing_medium)),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = stringResource(R.string.home_dashboard_title),
-            style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.onBackground,
-            fontWeight = FontWeight.Bold
-        )
-        SpacerShow(R.dimen.spacing_small)
-        Text(
-            text = stringResource(R.string.home_welcome_subtitle),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-    }
-}
 
 @Composable
 fun VehiclesScreenContent() {
