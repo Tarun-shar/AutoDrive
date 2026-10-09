@@ -38,6 +38,7 @@ fun AllRemindersScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .statusBarsPadding()
                 .padding(
                     horizontal = dimensionResource(R.dimen.screen_padding_horizontal),
                     vertical = dimensionResource(R.dimen.screen_padding_vertical)

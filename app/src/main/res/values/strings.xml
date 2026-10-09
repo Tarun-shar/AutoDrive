@@ -80,6 +80,8 @@
     <string name="action_trip_history">Trip History</string>
     <string name="action_maintenance">Maintenance</string>
     <string name="action_location">Location</string>
+    <string name="search_action">Search</string>
+    <string name="chevron_right">›</string>
 
     <!-- Bottom Navigation / Overview Descriptions -->
     <string name="desc_go_to_dashboard">Go to Dashboard</string>
@@ -97,6 +99,16 @@
     <string name="vehicle_honda_city_no">KA 02 CD 5678</string>
     <string name="vehicle_kia_seltos">Kia Seltos</string>
     <string name="vehicle_kia_seltos_no">KA 03 EF 9012</string>
+    <string name="vehicle_toyota_fortuner">Toyota Fortuner</string>
+    <string name="vehicle_toyota_fortuner_no">KA 04 GH 3456</string>
+    <string name="vehicle_land_rover_defender">Land Rover Defender</string>
+    <string name="vehicle_land_rover_defender_no">KA 05 IJ 7890</string>
+    <string name="vehicle_tata_nexon">Tata Nexon</string>
+    <string name="vehicle_tata_nexon_no">KA 06 KL 2345</string>
+    <string name="vehicle_mahindra_scorpio">Mahindra Scorpio</string>
+    <string name="vehicle_mahindra_scorpio_no">KA 07 MN 6789</string>
+    <string name="vehicle_skoda_slavia">Skoda Slavia</string>
+    <string name="vehicle_skoda_slavia_no">KA 08 OP 1234</string>
 
     <!-- Add / Edit Vehicle -->
     <string name="add_vehicle_title">Add Vehicle</string>

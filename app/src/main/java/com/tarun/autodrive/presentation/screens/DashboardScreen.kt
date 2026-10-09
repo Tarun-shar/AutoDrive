@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.sp
 import com.tarun.autodrive.R
 import com.tarun.autodrive.presentation.Utils.SpacerShow
 import com.tarun.autodrive.presentation.screens.MainScreens.HomeScreen
-import com.tarun.autodrive.presentation.screens.MainScreens.TripsScreenContent
+import com.tarun.autodrive.presentation.screens.MainScreens.VehiclesScreenContent
 import com.tarun.autodrive.ui.theme.AutoDriveTheme
 
 sealed class BottomNavItem(val route: String, val titleResId: Int, val iconResId: Int) {
@@ -65,7 +65,7 @@ fun DashboardScreen(
                     onNotificationClick = onSeeAllRemindersClick
                 )
                 "vehicles" -> VehiclesScreenContent()
-                "trips" -> TripsScreenContent()
+                "trips" -> TripsHistoryScreenContent()
                 "profile" -> ProfileScreenContent(onLogoutClick = onLogoutClick)
             }
         }
@@ -171,25 +171,6 @@ fun CustomBottomBar(
                 }
             }
         }
-    }
-}
-
-
-@Composable
-fun VehiclesScreenContent() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(dimensionResource(R.dimen.spacing_medium)),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = stringResource(R.string.my_vehicles_title),
-            style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.onBackground,
-            fontWeight = FontWeight.Bold
-        )
     }
 }
 

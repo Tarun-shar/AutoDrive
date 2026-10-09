@@ -8,6 +8,14 @@ data class ReminderItemModel(
     val status: String,
 )
 
+data class TripItemModel(
+    val id: String,
+    val title: String,
+    val distance: String,
+    val duration: String,
+    val date: String,
+)
+
 object ReminderRepository {
     fun getReminders(): List<ReminderItemModel> {
         return listOf(
