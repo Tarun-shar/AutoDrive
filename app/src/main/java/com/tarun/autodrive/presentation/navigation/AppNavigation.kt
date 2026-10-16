@@ -5,6 +5,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.tarun.autodrive.presentation.screens.AddEditVehicleScreen
 import com.tarun.autodrive.presentation.screens.AllRemindersScreen
 import com.tarun.autodrive.presentation.screens.DashboardScreen
 import com.tarun.autodrive.presentation.screens.EmailSentScreen
@@ -20,7 +21,7 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "splash"
+        startDestination = "dashboard"
     ) {
         composable("splash") {
             LaunchedEffect(Unit) {
@@ -85,7 +86,7 @@ fun AppNavigation() {
         composable("dashboard") {
             DashboardScreen(
                 onAddClick = {
-                    // Handle Add action
+                    navController.navigate("add_edit_vehicle")
                 },
                 onLogoutClick = {
                     navController.navigate("login") {
@@ -100,6 +101,16 @@ fun AppNavigation() {
         composable("all_reminders") {
             AllRemindersScreen(
                 onBackClick = {
+                    navController.popBackStack()
+                }
+            )
+        }
+        composable("add_edit_vehicle") {
+            AddEditVehicleScreen(
+                onBackClick = {
+                    navController.popBackStack()
+                },
+                onSaveSuccess = {
                     navController.popBackStack()
                 }
             )
