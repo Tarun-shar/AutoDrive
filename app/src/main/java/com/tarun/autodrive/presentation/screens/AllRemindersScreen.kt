@@ -40,8 +40,7 @@ fun AllRemindersScreen(
                 .fillMaxSize()
                 .statusBarsPadding()
                 .padding(
-                    horizontal = dimensionResource(R.dimen.screen_padding_horizontal),
-                    vertical = dimensionResource(R.dimen.screen_padding_vertical)
+                    horizontal = dimensionResource(R.dimen.screen_padding_horizontal)
                 ),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top

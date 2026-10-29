@@ -33,11 +33,13 @@ sealed class BottomNavItem(val route: String, val titleResId: Int, val iconResId
 
 @Composable
 fun DashboardScreen(
+    initialTab: String = "home",
     onAddClick: () -> Unit = {},
     onLogoutClick: () -> Unit = {},
     onSeeAllRemindersClick: () -> Unit = {},
+    onVehicleClick: (String) -> Unit = {}
 ) {
-    var selectedTab by remember { mutableStateOf("home") }
+    var selectedTab by remember { mutableStateOf(initialTab) }
 
     Scaffold(
         bottomBar = {
@@ -64,7 +66,10 @@ fun DashboardScreen(
                     onSeeAllClick = onSeeAllRemindersClick,
                     onNotificationClick = onSeeAllRemindersClick
                 )
-                "vehicles" -> VehiclesScreenContent()
+                "vehicles" -> VehiclesScreenContent(
+                    onAddVehicleClick = onAddClick,
+                    onVehicleClick = onVehicleClick
+                )
                 "trips" -> TripsHistoryScreenContent()
                 "profile" -> ProfileScreenContent(onLogoutClick = onLogoutClick)
             }

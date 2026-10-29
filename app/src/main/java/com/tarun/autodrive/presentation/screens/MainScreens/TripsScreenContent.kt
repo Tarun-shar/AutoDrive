@@ -24,6 +24,73 @@ import com.tarun.autodrive.presentation.Utils.SpacerShow
 import com.tarun.autodrive.presentation.model.TripItemModel
 import com.tarun.autodrive.ui.theme.AutoDriveTheme
 
+data class VehicleUiModel(
+    val id: String,
+    val imageRes: Int,
+    val vehicleNameRes: Int,
+    val regNumberRes: Int,
+    val isDefault: Boolean = false
+)
+
+private val vehicleList = listOf(
+    VehicleUiModel(
+        id = "creta",
+        imageRes = R.drawable.creta,
+        vehicleNameRes = R.string.vehicle_hyundai_creta,
+        regNumberRes = R.string.vehicle_hyundai_creta_no,
+        isDefault = true
+    ),
+    VehicleUiModel(
+        id = "honda",
+        imageRes = R.drawable.creta,
+        vehicleNameRes = R.string.vehicle_honda_city,
+        regNumberRes = R.string.vehicle_honda_city_no,
+        isDefault = false
+    ),
+    VehicleUiModel(
+        id = "kia",
+        imageRes = R.drawable.kia,
+        vehicleNameRes = R.string.vehicle_kia_seltos,
+        regNumberRes = R.string.vehicle_kia_seltos_no,
+        isDefault = false
+    ),
+    VehicleUiModel(
+        id = "fortuner",
+        imageRes = R.drawable.fortuner,
+        vehicleNameRes = R.string.vehicle_toyota_fortuner,
+        regNumberRes = R.string.vehicle_toyota_fortuner_no,
+        isDefault = false
+    ),
+    VehicleUiModel(
+        id = "defender",
+        imageRes = R.drawable.defender,
+        vehicleNameRes = R.string.vehicle_land_rover_defender,
+        regNumberRes = R.string.vehicle_land_rover_defender_no,
+        isDefault = false
+    ),
+    VehicleUiModel(
+        id = "nexon",
+        imageRes = R.drawable.nexon,
+        vehicleNameRes = R.string.vehicle_tata_nexon,
+        regNumberRes = R.string.vehicle_tata_nexon_no,
+        isDefault = false
+    ),
+    VehicleUiModel(
+        id = "scorpio",
+        imageRes = R.drawable.scorpio,
+        vehicleNameRes = R.string.vehicle_mahindra_scorpio,
+        regNumberRes = R.string.vehicle_mahindra_scorpio_no,
+        isDefault = false
+    ),
+    VehicleUiModel(
+        id = "skoda",
+        imageRes = R.drawable.skoda,
+        vehicleNameRes = R.string.vehicle_skoda_slavia,
+        regNumberRes = R.string.vehicle_skoda_slavia_no,
+        isDefault = false
+    )
+)
+
 @Composable
 fun VehiclesScreenContent(
     onAddVehicleClick: () -> Unit = {},
@@ -38,7 +105,7 @@ fun VehiclesScreenContent(
                 .fillMaxSize()
                 .padding(
                     horizontal = dimensionResource(R.dimen.screen_padding_horizontal),
-                    vertical = dimensionResource(R.dimen.screen_padding_vertical)
+
                 ),
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top
@@ -65,7 +132,7 @@ fun VehiclesScreenContent(
                 ) {
                     IconButton(onClick = {}) {
                         Icon(
-                            painter = painterResource(R.drawable.trips),
+                            painter = painterResource(R.drawable.baseline_search_24),
                             contentDescription = stringResource(R.string.search_action),
                             tint = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.size(dimensionResource(R.dimen.icon_size_medium))
@@ -82,6 +149,8 @@ fun VehiclesScreenContent(
                 }
             }
 
+            SpacerShow(R.dimen.spacing_small)
+
             // Scrollable Column for Vehicle Cards Only
             Column(
                 modifier = Modifier
@@ -90,78 +159,18 @@ fun VehiclesScreenContent(
                     .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_medium))
             ) {
-                // Vehicle Card 1: Hyundai Creta (Default)
-                VehicleItemCard(
-                    imageRes = R.drawable.creta,
-                    vehicleName = stringResource(R.string.vehicle_hyundai_creta),
-                    regNumber = stringResource(R.string.vehicle_hyundai_creta_no),
-                    isDefault = true,
-                    onClick = { onVehicleClick("creta") }
-                )
-
-                // Vehicle Card 2: Honda City
-                VehicleItemCard(
-                    imageRes = R.drawable.creta,
-                    vehicleName = stringResource(R.string.vehicle_honda_city),
-                    regNumber = stringResource(R.string.vehicle_honda_city_no),
-                    isDefault = false,
-                    onClick = { onVehicleClick("honda") }
-                )
-
-                // Vehicle Card 3: Kia Seltos
-                VehicleItemCard(
-                    imageRes = R.drawable.kia,
-                    vehicleName = stringResource(R.string.vehicle_kia_seltos),
-                    regNumber = stringResource(R.string.vehicle_kia_seltos_no),
-                    isDefault = false,
-                    onClick = { onVehicleClick("kia") }
-                )
-
-                // Vehicle Card 4: Toyota Fortuner
-                VehicleItemCard(
-                    imageRes = R.drawable.fortuner,
-                    vehicleName = stringResource(R.string.vehicle_toyota_fortuner),
-                    regNumber = stringResource(R.string.vehicle_toyota_fortuner_no),
-                    isDefault = false,
-                    onClick = { onVehicleClick("fortuner") }
-                )
-
-                // Vehicle Card 5: Land Rover Defender
-                VehicleItemCard(
-                    imageRes = R.drawable.defender,
-                    vehicleName = stringResource(R.string.vehicle_land_rover_defender),
-                    regNumber = stringResource(R.string.vehicle_land_rover_defender_no),
-                    isDefault = false,
-                    onClick = { onVehicleClick("defender") }
-                )
-
-                // Vehicle Card 6: Tata Nexon
-                VehicleItemCard(
-                    imageRes = R.drawable.nexon,
-                    vehicleName = stringResource(R.string.vehicle_tata_nexon),
-                    regNumber = stringResource(R.string.vehicle_tata_nexon_no),
-                    isDefault = false,
-                    onClick = { onVehicleClick("nexon") }
-                )
-
-                // Vehicle Card 7: Mahindra Scorpio
-                VehicleItemCard(
-                    imageRes = R.drawable.scorpio,
-                    vehicleName = stringResource(R.string.vehicle_mahindra_scorpio),
-                    regNumber = stringResource(R.string.vehicle_mahindra_scorpio_no),
-                    isDefault = false,
-                    onClick = { onVehicleClick("scorpio") }
-                )
-
-                // Vehicle Card 8: Skoda Slavia
-                VehicleItemCard(
-                    imageRes = R.drawable.skoda,
-                    vehicleName = stringResource(R.string.vehicle_skoda_slavia),
-                    regNumber = stringResource(R.string.vehicle_skoda_slavia_no),
-                    isDefault = false,
-                    onClick = { onVehicleClick("skoda") }
-                )
+                vehicleList.forEach { vehicle ->
+                    VehicleItemCard(
+                        imageRes = vehicle.imageRes,
+                        vehicleName = stringResource(vehicle.vehicleNameRes),
+                        regNumber = stringResource(vehicle.regNumberRes),
+                        isDefault = vehicle.isDefault,
+                        onClick = { onVehicleClick(vehicle.id) }
+                    )
+                }
             }
+
+            SpacerShow(R.dimen.spacing_small)
         }
     }
 }

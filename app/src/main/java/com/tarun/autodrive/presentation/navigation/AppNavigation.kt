@@ -2,9 +2,11 @@ package com.tarun.autodrive.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.tarun.autodrive.presentation.screens.AddEditVehicleScreen
 import com.tarun.autodrive.presentation.screens.AllRemindersScreen
 import com.tarun.autodrive.presentation.screens.DashboardScreen
@@ -13,6 +15,7 @@ import com.tarun.autodrive.presentation.screens.ForgotPasswordScreen
 import com.tarun.autodrive.presentation.screens.LoginScreen
 import com.tarun.autodrive.presentation.screens.SignUpScreen
 import com.tarun.autodrive.presentation.screens.SplashScreen
+import com.tarun.autodrive.presentation.screens.VehicleDetailsScreen
 import kotlinx.coroutines.delay
 
 @Composable
@@ -21,7 +24,7 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "dashboard"
+        startDestination = "dashboard?tab=home"
     ) {
         composable("splash") {
             LaunchedEffect(Unit) {
@@ -35,7 +38,7 @@ fun AppNavigation() {
         composable("login") {
             LoginScreen(
                 onLoginSuccess = {
-                    navController.navigate("dashboard") {
+                    navController.navigate("dashboard?tab=home") {
                         popUpTo("login") { inclusive = true }
                     }
                 },
@@ -50,7 +53,7 @@ fun AppNavigation() {
         composable("signup") {
             SignUpScreen(
                 onSignUpSuccess = {
-                    navController.navigate("dashboard") {
+                    navController.navigate("dashboard?tab=home") {
                         popUpTo("signup") { inclusive = true }
                     }
                 },
@@ -83,18 +86,32 @@ fun AppNavigation() {
                 }
             )
         }
-        composable("dashboard") {
+        composable(
+            route = "dashboard?tab={tab}",
+            arguments = listOf(
+                navArgument("tab") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = "home"
+                }
+            )
+        ) { backStackEntry ->
+            val tab = backStackEntry.arguments?.getString("tab") ?: "home"
             DashboardScreen(
+                initialTab = tab,
                 onAddClick = {
                     navController.navigate("add_edit_vehicle")
                 },
                 onLogoutClick = {
                     navController.navigate("login") {
-                        popUpTo("dashboard") { inclusive = true }
+                        popUpTo("dashboard?tab=home") { inclusive = true }
                     }
                 },
                 onSeeAllRemindersClick = {
                     navController.navigate("all_reminders")
+                },
+                onVehicleClick = { vehicleId ->
+                    navController.navigate("vehicle_details/$vehicleId")
                 }
             )
         }
@@ -105,13 +122,42 @@ fun AppNavigation() {
                 }
             )
         }
-        composable("add_edit_vehicle") {
-            AddEditVehicleScreen(
+        composable("vehicle_details/{vehicleId}") { backStackEntry ->
+            val vehicleId = backStackEntry.arguments?.getString("vehicleId") ?: "creta"
+            VehicleDetailsScreen(
+                vehicleId = vehicleId,
                 onBackClick = {
-                    navController.popBackStack()
+                    navController.navigate("dashboard?tab=vehicles") {
+                        popUpTo("dashboard?tab=home") { inclusive = true }
+                    }
+                },
+                onEditClick = { id ->
+                    navController.navigate("add_edit_vehicle?vehicleId=$id")
+                }
+            )
+        }
+        composable(
+            route = "add_edit_vehicle?vehicleId={vehicleId}",
+            arguments = listOf(
+                navArgument("vehicleId") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = null
+                }
+            )
+        ) { backStackEntry ->
+            val vehicleId = backStackEntry.arguments?.getString("vehicleId")
+            AddEditVehicleScreen(
+                vehicleId = vehicleId,
+                onBackClick = {
+                    navController.navigate("dashboard?tab=vehicles") {
+                        popUpTo("dashboard?tab=home") { inclusive = true }
+                    }
                 },
                 onSaveSuccess = {
-                    navController.popBackStack()
+                    navController.navigate("dashboard?tab=vehicles") {
+                        popUpTo("dashboard?tab=home") { inclusive = true }
+                    }
                 }
             )
         }

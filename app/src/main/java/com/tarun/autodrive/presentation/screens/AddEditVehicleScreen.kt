@@ -38,16 +38,18 @@ import com.tarun.autodrive.presentation.Utils.SpacerShow
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddEditVehicleScreen(
+    vehicleId: String? = null,
     onBackClick: () -> Unit = {},
     onSaveSuccess: () -> Unit = {}
 ) {
     val context = LocalContext.current
+    val isEditMode = vehicleId != null && vehicleId.isNotBlank()
 
-    var vehicleName by remember { mutableStateOf("") }
-    var model by remember { mutableStateOf("") }
-    var selectedYear by remember { mutableStateOf("") }
-    var fuelType by remember { mutableStateOf("") }
-    var regNumber by remember { mutableStateOf("") }
+    var vehicleName by remember { mutableStateOf(if (isEditMode) "Hyundai Creta" else "") }
+    var model by remember { mutableStateOf(if (isEditMode) "SX (O)" else "") }
+    var selectedYear by remember { mutableStateOf(if (isEditMode) "2023" else "") }
+    var fuelType by remember { mutableStateOf(if (isEditMode) "Petrol" else "") }
+    var regNumber by remember { mutableStateOf(if (isEditMode) "KA 01 AB 1234" else "") }
 
     var vehicleNameError by remember { mutableStateOf<String?>(null) }
     var modelError by remember { mutableStateOf<String?>(null) }
@@ -103,7 +105,7 @@ fun AddEditVehicleScreen(
             TopAppBar(
                 title = {
                     Text(
-                        text = stringResource(R.string.add_vehicle_title),
+                        text = if (isEditMode) stringResource(R.string.edit_vehicle_title) else stringResource(R.string.add_vehicle_title),
                         style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
                         color = MaterialTheme.colorScheme.onBackground
                     )
@@ -158,13 +160,14 @@ fun AddEditVehicleScreen(
                             }
 
                             if (isValid) {
-                                Toast.makeText(context, "Vehicle saved successfully!", Toast.LENGTH_SHORT).show()
+                                val msg = if (isEditMode) "Vehicle updated successfully!" else "Vehicle saved successfully!"
+                                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
                                 onSaveSuccess()
                             }
                         }
                     ) {
                         Text(
-                            text = stringResource(R.string.save_action),
+                            text = if (isEditMode) stringResource(R.string.update_action) else stringResource(R.string.save_action),
                             style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                             color = MaterialTheme.colorScheme.primary
                         )
@@ -182,7 +185,7 @@ fun AddEditVehicleScreen(
                 .fillMaxSize()
                 .padding(innerPadding)
                 .verticalScroll(rememberScrollState())
-                .padding(horizontal = dimensionResource(R.dimen.screen_padding_horizontal), vertical = dimensionResource(R.dimen.spacing_medium)),
+                .padding(horizontal = dimensionResource(R.dimen.screen_padding_horizontal), vertical = dimensionResource(R.dimen.screen_padding_vertical)),
             verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.spacing_medium))
         ) {
             // Vehicle Image Picker Box
